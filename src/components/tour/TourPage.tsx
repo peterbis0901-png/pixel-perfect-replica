@@ -132,7 +132,7 @@ function RouteMap({ active }: { active: number }) {
 function Itinerary() {
   const { t, lang } = useLang();
   const [day, setDay] = useState(0);
-  const d = C.days[day];
+  const d = C.days[day]!;
   return (
     <Section id="itinerary" className="bg-secondary">
       <Heading kicker="02">{lang === "vi" ? "Lịch trình chi tiết" : "Detailed itinerary"}</Heading>
