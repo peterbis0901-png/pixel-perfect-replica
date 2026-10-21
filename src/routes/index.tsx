@@ -1,24 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { TourPage } from "@/components/tour/TourPage";
+import { LangProvider } from "@/lib/i18n";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "Hành trình di sản: Hà Nội – Ninh Bình – Hạ Long | 4N3Đ" },
+      { name: "description", content: "Tour di sản miền Bắc 4 ngày 3 đêm: Hà Nội, Tràng An, Bái Đính và du thuyền vịnh Hạ Long. Heritage tour of Northern Vietnam." },
+      { property: "og:title", content: "Heritage Journey: Hanoi – Ninh Binh – Ha Long" },
+      { property: "og:description", content: "4 days 3 nights through Hanoi, Trang An and an overnight Ha Long Bay cruise." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
+  component: () => (
+    <LangProvider>
+      <TourPage />
+    </LangProvider>
+  ),
 });
-
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
