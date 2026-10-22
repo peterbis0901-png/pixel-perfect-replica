@@ -51,7 +51,7 @@ export const days: { label: L; title: L; stops: Stop[] }[] = [
     label: l("Ngày 1", "Day 1"),
     title: l("Hà Nội – Thủ đô ngàn năm", "Hanoi – Thousand-year capital"),
     stops: [
-      { time: l("Sáng", "Morning").vi === "" ? "" : "Sáng / Morning", t: l("Đón đoàn tại sân bay Nội Bài", "Pick-up at Noi Bai Airport"), d: l("Hướng dẫn viên đón đoàn, xe 35 chỗ đưa vào trung tâm.", "Your guide meets the group; 35-seat bus into the city."), buffer: l("Dự phòng kẹt xe 30'", "30' traffic buffer") },
+      { time: "Sáng / Morning", t: l("Đón đoàn tại sân bay Nội Bài", "Pick-up at Noi Bai Airport"), d: l("Hướng dẫn viên đón đoàn, xe 35 chỗ đưa vào trung tâm.", "Your guide meets the group; 35-seat bus into the city."), buffer: l("Dự phòng kẹt xe 30'", "30' traffic buffer") },
       { time: "Sáng / Morning", t: l("Khu di tích Chủ tịch Hồ Chí Minh", "President Ho Chi Minh Relic Complex"), d: l("Quảng trường Ba Đình, Bảo tàng Hồ Chí Minh, Nhà sàn Bác, Chùa Một Cột.", "Ba Dinh Square, Ho Chi Minh Museum, Stilt House, One Pillar Pagoda.") },
       { time: "Trưa / Noon", t: l("Ăn trưa tại khách sạn", "Lunch at the hotel"), d: l("Nhận phòng, nghỉ ngơi.", "Check in and rest.") },
       { time: "Chiều / Afternoon", t: l("Đền Ngọc Sơn – Cầu Thê Húc – Hồ Hoàn Kiếm", "Ngoc Son Temple – The Huc Bridge – Hoan Kiem Lake"), d: l("Chiêm ngưỡng tiêu bản rùa Hồ Gươm dài 1,2m.", "See the 1.2m preserved Hoan Kiem turtle specimen.") },
@@ -102,7 +102,7 @@ export const pricing = {
     { name: l("Người lớn & trẻ từ 10 tuổi", "Adults & children 10+"), price: "5.560.000₫", note: l("Giá trọn gói 100%", "Full package price"), featured: true },
     { name: l("Trẻ em 5 – 10 tuổi", "Children 5–10"), price: "4.170.000₫", note: l("75% giá người lớn", "75% of adult price"), featured: false },
     { name: l("Trẻ em 2 – 5 tuổi", "Children 2–5"), price: "2.780.000₫", note: l("50% giá người lớn", "50% of adult price"), featured: false },
-    { name: l("Trẻ em dưới 2 tuổi", "Children under 2"), price: l("Miễn phí", "Free").vi, note: l("Miễn phí · Phụ thu phòng đơn: 1.600.000₫", "Free · Single room supplement: 1,600,000₫"), featured: false },
+    { name: l("Trẻ em dưới 2 tuổi", "Children under 2"), price: "Miễn phí / Free", note: l("Miễn phí · Phụ thu phòng đơn: 1.600.000₫", "Free · Single room supplement: 1,600,000₫"), featured: false },
   ],
   included: [
     l("Xe du lịch 35 chỗ đưa đón suốt tuyến từ sân bay Nội Bài", "35-seat tourist bus for the whole route from Noi Bai Airport"),

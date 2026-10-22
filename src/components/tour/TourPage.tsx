@@ -176,9 +176,9 @@ function Pricing() {
   return (
     <Section id="pricing">
       <Heading kicker="03">{t(p.title)}</Heading>
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {p.packages.map((k) => (
-          <div key={k.price} className={`rounded-2xl border p-8 ${k.featured ? "border-primary bg-primary text-primary-foreground shadow-glow md:-translate-y-3" : "border-border bg-card"}`}>
+          <div key={k.name.en} className={`rounded-2xl border p-8 ${k.featured ? "border-primary bg-primary text-primary-foreground shadow-glow md:-translate-y-3" : "border-border bg-card"}`}>
             <p className={`text-xs font-semibold uppercase tracking-widest ${k.featured ? "text-gold" : "text-accent"}`}>{t(k.name)}</p>
             <p className="mt-4 font-display text-4xl font-semibold">{k.price}<span className="ml-1 font-sans text-sm font-normal opacity-70">{t(p.per)}</span></p>
             <p className="mt-2 text-sm opacity-80">{t(k.note)}</p>
