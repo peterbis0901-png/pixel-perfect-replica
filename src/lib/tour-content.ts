@@ -102,7 +102,7 @@ export const pricing = {
     { name: l("Người lớn & trẻ từ 10 tuổi", "Adults & children 10+"), price: "5.560.000₫", note: l("Giá trọn gói 100%", "Full package price"), featured: true },
     { name: l("Trẻ em 5 – 10 tuổi", "Children 5–10"), price: "4.170.000₫", note: l("75% giá người lớn", "75% of adult price"), featured: false },
     { name: l("Trẻ em 2 – 5 tuổi", "Children 2–5"), price: "2.780.000₫", note: l("50% giá người lớn", "50% of adult price"), featured: false },
-    { name: l("Trẻ em dưới 2 tuổi", "Children under 2"), price: "Miễn phí / Free", note: l("Miễn phí · Phụ thu phòng đơn: 1.600.000₫", "Free · Single room supplement: 1,600,000₫"), featured: false },
+    { name: l("Trẻ em dưới 2 tuổi", "Children under 2"), price: l("Miễn phí", "Free"), note: l("Phụ thu phòng đơn: 1.600.000₫", "Single room supplement: 1,600,000₫"), featured: false },
   ],
   included: [
     l("Xe du lịch 35 chỗ đưa đón suốt tuyến từ sân bay Nội Bài", "35-seat tourist bus for the whole route from Noi Bai Airport"),

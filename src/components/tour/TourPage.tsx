@@ -136,10 +136,10 @@ function Itinerary() {
   return (
     <Section id="itinerary" className="bg-secondary">
       <Heading kicker="02">{lang === "vi" ? "Lịch trình chi tiết" : "Detailed itinerary"}</Heading>
-      <div className="mb-10 flex flex-wrap gap-2">
+      <div className="mb-10 grid grid-cols-4 gap-2 sm:flex sm:flex-wrap">
         {C.days.map((x, i) => (
           <button key={i} onClick={() => setDay(i)}
-            className={`rounded-full px-5 py-2 text-sm font-semibold transition-colors ${i === day ? "bg-primary text-primary-foreground" : "bg-card text-muted-foreground hover:text-primary"}`}>
+            className={`rounded-full px-2 py-2 text-sm sm:px-5 font-semibold transition-colors ${i === day ? "bg-primary text-primary-foreground" : "bg-card text-muted-foreground hover:text-primary"}`}>
             {t(x.label)}
           </button>
         ))}
@@ -180,7 +180,7 @@ function Pricing() {
         {p.packages.map((k) => (
           <div key={k.name.en} className={`rounded-2xl border p-8 ${k.featured ? "border-primary bg-primary text-primary-foreground shadow-glow md:-translate-y-3" : "border-border bg-card"}`}>
             <p className={`text-xs font-semibold uppercase tracking-widest ${k.featured ? "text-gold" : "text-accent"}`}>{t(k.name)}</p>
-            <p className="mt-4 font-display text-4xl font-semibold">{k.price}<span className="ml-1 font-sans text-sm font-normal opacity-70">{t(p.per)}</span></p>
+            <p className="mt-4 font-display text-4xl font-semibold">{typeof k.price === "string" ? k.price : t(k.price)}{typeof k.price === "string" && <span className="ml-1 font-sans text-sm font-normal opacity-70">{t(p.per)}</span>}</p>
             <p className="mt-2 text-sm opacity-80">{t(k.note)}</p>
             <a href="#contact" className={`mt-8 block rounded-full py-3 text-center text-sm font-semibold ${k.featured ? "bg-accent text-accent-foreground" : "border border-primary text-primary hover:bg-primary hover:text-primary-foreground"}`}>{t(C.hero.book)}</a>
           </div>
@@ -277,7 +277,7 @@ function Contact() {
           <p className="mt-4 opacity-80">{t(c.body)}</p>
           <div className="mt-8 space-y-3">
             {c.hotlines.map((h, i) => (
-              <a key={i} href="tel:" className="flex items-center gap-3 font-display text-3xl font-semibold text-gold">☎ {h}</a>
+              <a key={i} href="tel:" className="flex items-center gap-3 font-display text-2xl font-semibold text-gold sm:text-3xl">☎ {h}</a>
             ))}
           </div>
           <div className="mt-8 space-y-1 text-sm opacity-85">
@@ -293,7 +293,7 @@ function Contact() {
             <>
               <input required className={input} placeholder={t(c.form.name)} />
               <input required type="tel" className={input} placeholder={t(c.form.phone)} />
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid gap-3 sm:grid-cols-2">
                 <input type="number" min={1} className={input} placeholder={t(c.form.guests)} />
                 <input type="date" className={input} aria-label={t(c.form.date)} />
               </div>
