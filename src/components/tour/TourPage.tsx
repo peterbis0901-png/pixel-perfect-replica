@@ -163,7 +163,7 @@ function Itinerary() {
         </div>
         <div className="h-fit rounded-2xl border border-border bg-card p-5 shadow-soft lg:sticky lg:top-24">
           <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-accent">{lang === "vi" ? "Bản đồ hành trình" : "Route map"}</p>
-          <RouteMap active={day} />
+          <div className="mx-auto max-w-sm"><RouteMap active={day} /></div>
         </div>
       </div>
     </Section>
@@ -178,7 +178,7 @@ function Pricing() {
       <Heading kicker="03">{t(p.title)}</Heading>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {p.packages.map((k) => (
-          <div key={k.name.en} className={`rounded-2xl border p-8 ${k.featured ? "border-primary bg-primary text-primary-foreground shadow-glow md:-translate-y-3" : "border-border bg-card"}`}>
+          <div key={k.name.en} className={`rounded-2xl border p-8 ${k.featured ? "border-primary bg-primary text-primary-foreground shadow-glow lg:-translate-y-3" : "border-border bg-card"}`}>
             <p className={`text-xs font-semibold uppercase tracking-widest ${k.featured ? "text-gold" : "text-accent"}`}>{t(k.name)}</p>
             <p className="mt-4 font-display text-4xl font-semibold">{typeof k.price === "string" ? k.price : t(k.price)}{typeof k.price === "string" && <span className="ml-1 font-sans text-sm font-normal opacity-70">{t(p.per)}</span>}</p>
             <p className="mt-2 text-sm opacity-80">{t(k.note)}</p>
@@ -277,7 +277,7 @@ function Contact() {
           <p className="mt-4 opacity-80">{t(c.body)}</p>
           <div className="mt-8 space-y-3">
             {c.hotlines.map((h, i) => (
-              <a key={i} href="tel:" className="flex items-center gap-3 font-display text-2xl font-semibold text-gold sm:text-3xl">☎ {h}</a>
+              <a key={i} href="tel:" className="flex items-center gap-3 font-display text-2xl font-semibold text-gold sm:text-3xl md:text-2xl lg:text-3xl">☎ {h}</a>
             ))}
           </div>
           <div className="mt-8 space-y-1 text-sm opacity-85">
@@ -286,7 +286,7 @@ function Contact() {
             <p>{c.email}</p>
           </div>
         </div>
-        <form onSubmit={(e) => { e.preventDefault(); setSent(true); }} className="space-y-3 rounded-2xl bg-card p-6 text-card-foreground">
+        <form onSubmit={(e) => { e.preventDefault(); setSent(true); }} className="h-fit space-y-3 rounded-2xl bg-card p-6 text-card-foreground">
           {sent ? (
             <p className="py-16 text-center font-display text-2xl text-primary">{t(c.form.thanks)}</p>
           ) : (
